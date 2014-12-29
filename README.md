@@ -15,7 +15,7 @@ Or install it yourself as:
 
 ## Configuration
 
-Add this to intializer:
+Add this to an initializer:
 
     Artichoke::Connection.configure do |config|
       config.username = 'ninja@gmail.com'
