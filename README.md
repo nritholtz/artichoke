@@ -56,7 +56,7 @@ This is best used prior to an action that should trigger the email you want to e
     #    By default, the poller raises an error if no email was found
     #    within the determined timeout. However, you can pass the skip_error parameter
     #    in order to silence the error, so that you can assert no email was sent.
-    email = @poller.find({message_subject: "I wear Kimonos on weekends", timeout: 30, skip_error: false})
+    email = @poller.find({message_subject: "I wear Kimonos on weekends", timeout: 30, skip_error: true})
     email.should be_nil
 
 ### Evaluating and Manipulating the returned Message object
