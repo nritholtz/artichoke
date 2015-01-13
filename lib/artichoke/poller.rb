@@ -28,7 +28,7 @@ module Artichoke
         Timeout::timeout(options[:timeout]|| 75) do
           while true do
             client do
-              gm_string = "newer:#{@gmail_start_time.to_i} subject:"+options[:message_subject]
+              gm_string = "newer:#{@gmail_start_time.to_i} subject:"+options[:message_subject]+" "
               if options[:attachments]
                 options[:attachments].each{|attachment| gm_string += attachment+" "} 
                 gm_string+= " has:attachment"
