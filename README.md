@@ -62,7 +62,7 @@ This is best used prior to an action that should trigger the email you want to e
 ### Evaluating and Manipulating the returned Message object
 
     # You can now do evaluations on the email, such as reading the body
-    email.body.should have_content "I am forever in your debt master..."
+    email.message_content.should have_content "I am forever in your debt master..."
 
     #   You can also evaluate attachments by calling email.attachments
     #   or return the first attachment's filename by using
