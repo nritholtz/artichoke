@@ -10,7 +10,7 @@ module Artichoke
     end
 
     def message_content
-      text_part ? text_part.decoded : html_part.decoded
+      text_part.try(:decoded) || html_part.try(:decoded) || body.decoded
     end
 
     private

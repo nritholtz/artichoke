@@ -36,7 +36,7 @@ module Artichoke
               @gmail.inbox.emails(:gm => gm_string).each do |email|
                 message = email.message
                 if (message.date.to_i >= @gmail_start_time.to_i) && (message.subject == options[:message_subject])
-                  body = message.text_part ? message.text_part.decoded : message.html_part.decoded
+                  body = (message.text_part.try(:decoded) || message.html_part.try(:decoded) || message.body.to_s.force_encoding('utf-8'))
                   return Message.new(message) if (options[:content]|| []).all?{|c| body =~ /#{c}/}
                 end
               end
