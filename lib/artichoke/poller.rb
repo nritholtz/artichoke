@@ -13,7 +13,8 @@ module Artichoke
         @gmail = Gmail.new(username, password)
         @gmail.peek = true
         yield
-      rescue Net::IMAP::ByeResponseError
+      #Retry for intermittent Gmail issues
+      rescue Net::IMAP::ByeResponseError, Net::IMAP::NoResponseError
         retry
       ensure      
         @gmail.disconnect
