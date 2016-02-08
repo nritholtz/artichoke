@@ -14,7 +14,8 @@ module Artichoke
         @gmail.peek = true
         yield
       #Retry for intermittent Gmail issues
-      rescue Net::IMAP::ByeResponseError, Net::IMAP::NoResponseError
+      rescue Net::IMAP::ByeResponseError, Net::IMAP::NoResponseError => e
+        puts "Artichoke: Retrying after #{e.inspect}"
         retry
       ensure      
         @gmail.disconnect
