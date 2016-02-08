@@ -14,6 +14,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Artichoke::VERSION
 
-  gem.add_runtime_dependency 'ruby-gmail-nritholtz', '~> 0.3.4'
+  gem.add_runtime_dependency 'ruby-gmail-nritholtz', '= 0.3.4'
   gem.add_runtime_dependency 'activesupport', '>= 3.1'
 end
