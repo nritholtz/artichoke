@@ -36,7 +36,13 @@ This is best used prior to an action that should trigger the email you want to e
     #    You can pass in a defined timeout period for the poller to execute
     #    and if not defined, it will default to 75 seconds.
     email = @poller.find({message_subject: "Ninjas are coming!!", timeout: 30})
+
+
+### Partial subject match
     
+    # By default, artichoke will only find emails with exact match of the email's subject. 
+    # You can pass in a flag for allowing emails with partial subject matches
+    email = @poller.find({message_subject: "Ninjas are", timeout: 30, partial_subject_match: true})
 
 ### Find email by subject and content(s)
     
