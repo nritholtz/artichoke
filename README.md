@@ -65,6 +65,11 @@ This is best used prior to an action that should trigger the email you want to e
     email = @poller.find({message_subject: "I wear Kimonos on weekends", timeout: 30, skip_error: true})
     email.should be_nil
 
+### Count number of emails that fit given criteria
+
+    email = @poller.count({message_subject: "With every death, comes honor. With honor, redemption.", content: ["See through the dragon's eyes."]})
+    email.should eq(2)
+
 ### Evaluating and Manipulating the returned Message object
 
     # You can now do evaluations on the email, such as reading the body
