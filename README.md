@@ -67,7 +67,7 @@ This is best used prior to an action that should trigger the email you want to e
 
 ### Count number of emails that fit given criteria
 
-    email = @poller.count({message_subject: "With every death, comes honor. With honor, redemption.", content: ["See through the dragon's eyes."]})
+    email = @poller.count({message_subject: "With every death, comes honor. With honor, redemption.", content: ["See through the dragon's eyes.", end_time: INSERT_DATETIME_HERE]})
     email.should eq(2)
 
 ### Evaluating and Manipulating the returned Message object

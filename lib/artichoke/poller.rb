@@ -64,6 +64,9 @@ module Artichoke
         options[:attachments].each{|attachment| gm_string += attachment+" "} 
         gm_string+= " has:attachment"
       end
+      if options[:end_time]
+        gm_string+= " older:#{options[:end_time].to_i}"
+      end
       gm_string
     end
 
