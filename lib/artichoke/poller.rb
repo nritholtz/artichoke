@@ -61,7 +61,7 @@ module Artichoke
     def generate_gm_string(start_time, options={})
       gm_string = "newer:#{start_time.to_i} subject:"+options[:message_subject]+" "
       if options[:attachments]
-        options[:attachments].each{|attachment| gm_string += attachment+" "} 
+        options[:attachments].each{|attachment| gm_string += "filename:(#{attachment}) "} 
         gm_string+= " has:attachment"
       end
       if options[:end_time]
